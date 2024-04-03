@@ -302,3 +302,19 @@ spec:
       command: ['wget']
       args: ['famousapp-famouschart:80']
   restartPolicy: Never
+apiVersion: route.openshift.io/v1
+---
+kind: Route
+metadata:
+  labels:
+    app.kubernetes.io/name: famouschart
+  name: famousapp-famouschart
+spec:
+  host: famousapp.apps.ocp4.example.com
+  port:
+    targetPort: http
+  to:
+    kind: Service
+    name: famousapp-famouschart
+    weight: 100
+  wildcardPolicy: None
