@@ -4,7 +4,7 @@ const cityCountryRoutes = require('./routes/cityCountry');
 const healthzRoute = require('./routes/healthz');
 
 const app = express();
-const port = process.env.NODE_PORT || 3000;
+const port = process.env.NODE_PORT || 8080;
 
 const pool = mysql.createPool({
   host: process.env.WORLD_HOST,
