@@ -13,7 +13,6 @@ pipeline {
         STAGE_PROJECT = "rgdacosta-movies-stage"
         APP_GIT_URL = "https://gitlab.com/rgdacosta/ocp-apps"
         NEXUS_SERVER = "https://nexus-common.apps.eu46r.prod.ole.redhat.comx//repository/java"
-
         APP_NAME = "movies"
     }
 
