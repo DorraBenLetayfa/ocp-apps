@@ -13,7 +13,7 @@ pipeline {
 		     stage('Deploy') {
 			    steps {
 				sh '''
-				    oc start-build greeting-devsecops \
+				    oc start-build greeting \
 				    --follow --wait -n ${APP_NAMESPACE}
 				''' }
 				}
