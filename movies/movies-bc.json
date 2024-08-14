@@ -16,6 +16,7 @@
         "strategy": {
             "type": "JenkinsPipeline",
             "jenkinsPipelineStrategy": {
+	       "jenkinsfilePath": "Jenkinsfile" 
             }
         }
     }
