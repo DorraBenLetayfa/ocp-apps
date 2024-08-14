@@ -2,17 +2,24 @@ apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
   name: my-nodejs-pipeline
+
 spec:
+
   params:
+
     - name: git-url
       type: string
       description: The git repository URL
+
     - name: path-context
       type: string
       description: The subdirectory for the Node.js app
+
   workspaces:
     - name: shared-workspace
+
   tasks:
+
     - name: fetch-repository
       taskRef:
         name: git-clone
