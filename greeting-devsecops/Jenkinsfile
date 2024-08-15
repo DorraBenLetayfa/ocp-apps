@@ -21,7 +21,7 @@ pipeline {
 	stage('Push to Quay') {
     	    steps {
         	sh '''
-            	  oc start-build greeting-devsecops-quay --follow --wait -n ${APP_NAMESPACE}
+            	  oc start-build greeting --follow --wait -n ${APP_NAMESPACE}
 		   ''' }
 		}
     }
@@ -38,6 +38,6 @@ pipeline {
                     'https://gitlab.com/api/v4/projects/19797749/issues' \
                     -d '{"title": "CI build $BUILD_NUMBER", "body": "Pipeline build $BUILD_NUMBER has failed"}'
 		   """ }
-} 
-}
+		} 
+	}
 }
