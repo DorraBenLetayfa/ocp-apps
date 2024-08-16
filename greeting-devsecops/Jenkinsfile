@@ -10,13 +10,14 @@ pipeline {
                 sh "node greeting-devsecops/test.js"
             }
         }
-		     stage('Deploy') {
-			    steps {
-				sh '''
-				    oc start-build greeting \
-				    --follow --wait -n ${APP_NAMESPACE}
-				''' }
-				}
+
+        stage('Deploy') {
+	    steps {
+		sh '''
+		    oc start-build greeting \
+		    --follow --wait -n ${APP_NAMESPACE}
+		''' }
+		}
 
 	stage('Push to Quay') {
     	    steps {
